@@ -787,9 +787,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _controller: {fileID: 837625275}
-  CellList: {fileID: 0}
-  _cellsParent: {fileID: 0}
-  _cellViewPrefab: {fileID: 0}
+  CellList: {fileID: 11400000, guid: a6dfc10eb77f44b4e97c950d48f91c5f, type: 2}
+  _cellsParent: {fileID: 1041590912}
+  _cellViewPrefab: {fileID: -7062451754764339256, guid: 4e32e7191b9a44726804dff8855050a2, type: 3}
   _cellSize: {x: 1, y: 1}
 --- !u!1 &1253828033
 GameObject:

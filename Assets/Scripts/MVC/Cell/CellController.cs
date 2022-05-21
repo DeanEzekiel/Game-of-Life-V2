@@ -23,6 +23,7 @@ namespace GameOfLife.MVC_Controllers
         {
             var cellSize2D = new Vector2(cellSize, cellSize);
             _model.SaveCellSpecs(cellSize2D);
+            _model.CellList.SetDistance(cellSize);
         }
 
         public void SetCellSpecs(Color color)
@@ -52,12 +53,12 @@ namespace GameOfLife.MVC_Controllers
 
         public void SetCellsNextLife()
         {
-
+            _model.CellList.SetCellsNextLife();
         }
 
-        public void SetCellsCurrentLife()
+        public void StartCellsNewLife()
         {
-
+            _model.CellList.StartCellsNewLife();
         }
         #endregion
     }

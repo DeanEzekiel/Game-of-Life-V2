@@ -17,11 +17,14 @@ namespace GameOfLife.MVC_Controllers
         #region Public API
         public void SetupGrid(int rows, int cols, float size)
         {
-            // refresh the Cell Controller's cells list first
-            Controllers.Cell.ClearCellList();
-            Controllers.Cell.SetCellSpecs(size);
+            if (Controllers.Game.State == GameState.GridSetup)
+            {
+                // refresh the Cell Controller's cells list first
+                Controllers.Cell.ClearCellList();
+                Controllers.Cell.SetCellSpecs(size);
 
-            _model.SetupGrid(rows, cols, size);
+                _model.SetupGrid(rows, cols, size);
+            }
         }
 
         public void TriggerSpawnCell(Vector2 position)

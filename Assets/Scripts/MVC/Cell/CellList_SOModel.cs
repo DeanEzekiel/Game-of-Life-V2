@@ -19,7 +19,7 @@ namespace GameOfLife.MVC_Cell
             .Cast<Direction>()
             .ToList();
 
-        private float _dist;
+        private float _dist = 0;
         #endregion
 
         #region Public API
@@ -67,6 +67,49 @@ namespace GameOfLife.MVC_Cell
             }
 
             return livingCount;
+        }
+
+        public void SetCellsNextLife()
+        {
+            foreach (var cell in _cells.Values)
+            {
+                var livingNeighborsCount = GetLivingNeighborsCount(cell);
+
+                if (cell.IsAlive &&
+                    (livingNeighborsCount < 2 || livingNeighborsCount > 3))
+                {
+                    // Any live cell with fewer than two live neighbours dies
+                    // Any live cell with more than three live neighbours dies
+                    cell.SetNextLife(!cell.IsAlive);
+                }
+                else if (!cell.IsAlive && livingNeighborsCount == 3)
+                {
+                    // Any dead cell with exactly three live neighbours
+                    // becomes a live cell
+                    cell.SetNextLife(!cell.IsAlive);
+                }
+                else
+                {
+                    // Any live cell with two or three live neighbours
+                    // lives on to the next generation.
+                    // (or can be interpreted as all else retains their status
+                    // as the ones that FLIP status has already been covered.)
+                    cell.SetNextLife(cell.IsAlive);
+                }
+            }
+        }
+
+        public void StartCellsNewLife()
+        {
+            foreach (var cell in _cells.Values)
+            {
+                cell.SetCurrentLife();
+            }
+        }
+
+        public void SetDistance(float distance)
+        {
+            _dist = distance;
         }
         #endregion
 

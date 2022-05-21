@@ -20,13 +20,39 @@ namespace GameOfLife.MVC_Game
         [Tooltip("Higher value is faster.")]
         private float _speed = 1f;
 
-        private float _waitTime => (_tick / _speed);
+        private float WaitTime => (_tick / _speed);
+
+        public int GenerationNumber { get; private set; } = 0;
+        public int ActiveCellsCount { get; private set; } = 0;
         #endregion
 
-        #region Implementation
+        #region Public API
         public void SetSpeed(float speed)
         {
             _speed = speed;
+        }
+
+
+        public IEnumerator C_LoopGeneration()
+        {
+            GenerationNumber = 0;
+            do
+            {
+                GenerationNumber++;
+                Debug.Log($"Now on Gen #{GenerationNumber}");
+
+                ActiveCellsCount = _controller.CheckLivingCellsCount();
+                Debug.Log($"Alive Cells Count: {ActiveCellsCount}");
+
+                _controller.TriggerSetCellsNextLife();
+                yield return new WaitForSeconds(WaitTime);
+                _controller.TriggerStartCellsNewLife();
+            } while (ActiveCellsCount > 0);
+
+            if (ActiveCellsCount == 0)
+            {
+                _controller.SetState(GameState.EndGeneration);
+            }
         }
         #endregion
     }

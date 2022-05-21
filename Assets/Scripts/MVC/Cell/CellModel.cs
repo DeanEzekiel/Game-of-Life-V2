@@ -69,6 +69,7 @@ namespace GameOfLife.MVC_Cell
 
             CellList.AddCellForLookup(cell);
         }
+
         #endregion
 
         #region Implementation
