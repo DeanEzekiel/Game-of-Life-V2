@@ -13,5 +13,21 @@ namespace GameOfLife.MVC_Controllers
         [SerializeField]
         private GridView _view;
         #endregion
+
+        #region Public API
+        public void SetupGrid(int rows, int cols, float size)
+        {
+            // refresh the Cell Controller's cells list first
+            Controllers.Cell.ClearCellList();
+            Controllers.Cell.SetCellSpecs(size);
+
+            _model.SetupGrid(rows, cols, size);
+        }
+
+        public void TriggerSpawnCell(Vector2 position)
+        {
+            Controllers.Cell.SpawnCellOnPos(position);
+        }
+        #endregion
     }
 }

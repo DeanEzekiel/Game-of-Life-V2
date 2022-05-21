@@ -13,5 +13,16 @@ namespace GameOfLife.MVC_Controllers
         [SerializeField]
         private GameView _view;
         #endregion
+
+        #region Fields
+        public GameState State { get; private set; } = GameState.Start;
+        #endregion
+
+        #region Unity Callbacks
+        private void Start()
+        {
+            State = GameState.Start;
+        }
+        #endregion
     }
 }
