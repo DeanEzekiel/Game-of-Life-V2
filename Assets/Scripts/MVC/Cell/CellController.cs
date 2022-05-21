@@ -12,9 +12,6 @@ namespace GameOfLife.MVC_Controllers
         private CellModel _model;
         [SerializeField]
         private CellView _view;
-
-        [SerializeField]
-        private CellList_SOModel _cellList;
         #endregion
     }
 }
