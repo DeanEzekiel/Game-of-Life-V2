@@ -6,7 +6,6 @@ namespace GameOfLife
 {
     public class GameMain : ASingleton<GameMain>
     {
-        // TODO reference in Inspector later
         public GameControllers Controllers;
     }
 }
