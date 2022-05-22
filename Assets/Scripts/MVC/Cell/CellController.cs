@@ -19,6 +19,12 @@ namespace GameOfLife.MVC_Controllers
         #endregion
 
         #region Public API
+        [ContextMenu("Plot Init Cells")]
+        public void PlotCells()
+        {
+            Controllers.Game.SetState(GameState.PlotInitCells);
+        }
+
         public void SetCellSpecs(float cellSize)
         {
             var cellSize2D = new Vector2(cellSize, cellSize);

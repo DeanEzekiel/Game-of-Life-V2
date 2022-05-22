@@ -54,6 +54,11 @@ namespace GameOfLife.MVC_Game
                 _controller.SetState(GameState.EndGeneration);
             }
         }
+
+        public void StopGeneration()
+        {
+            StopAllCoroutines();
+        }
         #endregion
     }
 }

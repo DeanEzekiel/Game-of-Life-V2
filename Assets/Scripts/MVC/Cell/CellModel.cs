@@ -64,8 +64,8 @@ namespace GameOfLife.MVC_Cell
             cell.transform.position = position;
             cell.transform.localScale = _cellSize;
 
-            cell.Initialize();
             cell.SetController(_controller);
+            cell.Initialize();
 
             CellList.AddCellForLookup(cell);
         }

@@ -15,6 +15,13 @@ namespace GameOfLife.MVC_Controllers
         #endregion
 
         #region Public API
+        [ContextMenu("Setup Grid")]
+        public void MenuSetupGrid()
+        {
+            Controllers.Game.SetState(GameState.GridSetup);
+            SetupGrid(_model.GridRows, _model.GridCols, _model.Size);
+        }
+
         public void SetupGrid(int rows, int cols, float size)
         {
             if (Controllers.Game.State == GameState.GridSetup)

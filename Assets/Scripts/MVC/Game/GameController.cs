@@ -82,14 +82,21 @@ namespace GameOfLife.MVC_Controllers
         #endregion
 
         #region Implementation
+        [ContextMenu("Play Generation")]
         private void StartGeneration()
         {
             StartCoroutine(_model.C_LoopGeneration());
         }
 
+        [ContextMenu("Stop Generation")]
+        private void StopGenState()
+        {
+            SetState(GameState.EndGeneration);
+        }
+
         private void StopGeneration()
         {
-            _model.StopAllCoroutines();
+            _model.StopGeneration();
         }
         #endregion
     }

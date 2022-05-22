@@ -23,6 +23,7 @@ namespace GameOfLife.MVC_Cell
         #region EventSystems
         public void OnPointerClick(PointerEventData eventData)
         {
+            Debug.Log($"Clicked. State is {_controller.CheckGameState()}");
             if (_controller.CheckGameState() == GameState.PlotInitCells)
             {
                 FlipLife();

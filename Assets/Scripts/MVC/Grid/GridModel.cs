@@ -19,8 +19,14 @@ namespace GameOfLife.MVC_Grid
         [SerializeField]
         [Range(5, 25)]
         private int _gridCols = 10;
-
+        [SerializeField]
         private float _size = 1;
+        #endregion
+
+        #region Accessors
+        public int GridRows => _gridRows;
+        public int GridCols => _gridCols;
+        public float Size => _size;
         #endregion
 
         #region Public API
@@ -36,10 +42,10 @@ namespace GameOfLife.MVC_Grid
         #region Implementation
         private void ConfigureGrid()
         {
-            float minRow = (_gridRows / 2) * -1;
-            float maxRow = (_gridRows / 2);
-            float minCol = (_gridCols / 2) * -1;
-            float maxCol = (_gridCols / 2);
+            float minRow = (_gridRows / 2) * _size * -1;
+            float maxRow = (_gridRows / 2) * _size;
+            float minCol = (_gridCols / 2) * _size * -1;
+            float maxCol = (_gridCols / 2) * _size;
 
             // if rows and cols are divisible by 2,
             // adjust the min and max by half
@@ -54,10 +60,13 @@ namespace GameOfLife.MVC_Grid
                 maxCol -= _size / 2;
             }
 
+            Debug.Log($"Row Min {minRow} and Row Max {maxRow}");
+            Debug.Log($"Col Min {minCol} and Col Max {maxCol}");
+
             float tempRow = minRow;
-            float tempCol = minCol;
             while (tempRow <= maxRow)
             {
+                float tempCol = minCol;
                 while (tempCol <= maxCol)
                 {
                     Vector2 position = new Vector2(tempRow, tempCol);
