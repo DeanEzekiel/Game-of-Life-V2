@@ -32,11 +32,10 @@ namespace GameOfLife.MVC_Grid
         #endregion
 
         #region Public API
-        public void SetupGrid(int rows, int cols, float size)
+        public void SetupGrid(int rows, int cols)
         {
             _gridRows = rows;
             _gridCols = cols;
-            _size = size;
             ConfigureGrid();
         }
         #endregion

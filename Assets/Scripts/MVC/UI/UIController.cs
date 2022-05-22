@@ -26,7 +26,11 @@ namespace GameOfLife.MVC_Controllers
         public void TriggerUpdateGrid()
         {
             Controller.Grid.SetupGrid
-                (_view.RowValue, _view.ColValue, _view.SizeValue);
+                (_view.RowValue, _view.ColValue);
+        }
+        public void TriggerUpdateCamSize()
+        {
+            Controller.Camera.AdjustSize(_view.SizeValue);
         }
         public void OnClickExitGame()
         {

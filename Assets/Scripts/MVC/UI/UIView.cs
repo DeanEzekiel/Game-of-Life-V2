@@ -160,7 +160,8 @@ namespace GameOfLife.MVC_UI
         private void SliderSizeChanged(float value)
         {
             _txtSize.text = value.ToString("F1");
-            _controller.TriggerUpdateGrid();
+            //_controller.TriggerUpdateGrid();
+            _controller.TriggerUpdateCamSize();
         }
         private void SliderSpeedChanged(float value)
         {

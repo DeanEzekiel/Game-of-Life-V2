@@ -19,18 +19,18 @@ namespace GameOfLife.MVC_Controllers
         public void MenuSetupGrid()
         {
             Controller.Game.SetState(GameState.GridSetup);
-            SetupGrid(_model.GridRows, _model.GridCols, _model.Size);
+            SetupGrid(_model.GridRows, _model.GridCols);
         }
 
-        public void SetupGrid(int rows, int cols, float size)
+        public void SetupGrid(int rows, int cols)
         {
             if (Controller.Game.State == GameState.GridSetup)
             {
                 // refresh the Cell Controller's cells list first
                 Controller.Cell.ClearCellList();
-                Controller.Cell.SetCellSpecs(size);
+                Controller.Cell.SetCellSpecs(_model.Size);
 
-                _model.SetupGrid(rows, cols, size);
+                _model.SetupGrid(rows, cols);
             }
         }
 

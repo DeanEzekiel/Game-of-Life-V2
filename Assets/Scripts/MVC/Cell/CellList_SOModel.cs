@@ -19,7 +19,7 @@ namespace GameOfLife.MVC_Cell
             .Cast<Direction>()
             .ToList();
 
-        private float _dist = 0;
+        private float _dist = 1;
         #endregion
 
         #region Public API

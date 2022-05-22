@@ -12,5 +12,6 @@ namespace GameOfLife
         public CellController Cell;
         public UIController UI;
         public SFXController SFX;
+        public CameraController Camera;
     }
 }
