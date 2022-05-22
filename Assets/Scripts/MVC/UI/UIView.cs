@@ -175,14 +175,14 @@ namespace GameOfLife.MVC_UI
             ShowMainMenu();
             DDSetColor();
 
-            _btnBackToSetup.onClick.AddListener(_controller.TriggerGridSetupState);
-            _btnExit.onClick.AddListener(_controller.TriggerExitGame);
-            _btnExit2.onClick.AddListener(_controller.TriggerExitGame);
-            _btnGridSetup.onClick.AddListener(_controller.TriggerGridSetupState);
-            _btnGridSetup2.onClick.AddListener(_controller.TriggerGridSetupState);
-            _btnPlay.onClick.AddListener(_controller.TriggerPlay);
-            _btnPlotCells.onClick.AddListener(_controller.TriggerPlotCells);
-            _btnStop.onClick.AddListener(_controller.TriggerStop);
+            _btnBackToSetup.onClick.AddListener(_controller.OnClickGridSetup);
+            _btnExit.onClick.AddListener(_controller.OnClickExitGame);
+            _btnExit2.onClick.AddListener(_controller.OnClickExitGame);
+            _btnGridSetup.onClick.AddListener(_controller.OnClickGridSetup);
+            _btnGridSetup2.onClick.AddListener(_controller.OnClickGridSetup);
+            _btnPlay.onClick.AddListener(_controller.OnClickPlay);
+            _btnPlotCells.onClick.AddListener(_controller.OnClickPlotCells);
+            _btnStop.onClick.AddListener(_controller.OnClickStop);
 
             _sldColumn.onValueChanged.AddListener(delegate {
                 SliderColChanged(_sldColumn.value);

@@ -15,8 +15,9 @@ namespace GameOfLife.MVC_Controllers
         #endregion
 
         #region UI Public API
-        public void TriggerGridSetupState()
+        public void OnClickGridSetup()
         {
+            TriggerButtonClickSFX();
             Controller.Game.SetState(GameState.GridSetup);
             TriggerUpdateGrid();
 
@@ -27,22 +28,26 @@ namespace GameOfLife.MVC_Controllers
             Controller.Grid.SetupGrid
                 (_view.RowValue, _view.ColValue, _view.SizeValue);
         }
-        public void TriggerExitGame()
+        public void OnClickExitGame()
         {
+            TriggerButtonClickSFX();
             Controller.Game.Quit();
         }
-        public void TriggerPlotCells()
+        public void OnClickPlotCells()
         {
+            TriggerButtonClickSFX();
             Controller.Game.SetState(GameState.PlotInitCells);
             _view.ShowPlotCells();
         }
-        public void TriggerPlay()
+        public void OnClickPlay()
         {
+            TriggerButtonClickSFX();
             Controller.Game.SetState(GameState.PlayGeneration);
             _view.ShowStatePlaying();
         }
-        public void TriggerStop()
+        public void OnClickStop()
         {
+            TriggerButtonClickSFX();
             Controller.Game.SetState(GameState.EndGeneration);
             ShowStateEnded();
         }
@@ -52,6 +57,7 @@ namespace GameOfLife.MVC_Controllers
         }
         public Color TriggerColorChange(string value)
         {
+            TriggerButtonClickSFX();
             Color color;
             if (value == ColorOption.RED)
             {
@@ -83,6 +89,13 @@ namespace GameOfLife.MVC_Controllers
         public void SetGenerationText(string gen, string cells)
         {
             _view.SetGenerationText(gen, cells);
+        }
+        #endregion
+
+        #region Sound Implementation
+        private void TriggerButtonClickSFX()
+        {
+            Controller.SFX.PlayButtonClick();
         }
         #endregion
     }

@@ -27,6 +27,7 @@ namespace GameOfLife.MVC_Cell
             if (_controller.CheckGameState() == GameState.PlotInitCells)
             {
                 FlipLife();
+                _controller.TriggerCellClickSFX();
             }
         }
         #endregion

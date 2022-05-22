@@ -13,5 +13,20 @@ namespace GameOfLife.MVC_Controllers
         [SerializeField]
         private SFXView _view;
         #endregion
+
+        #region Public API
+        public void PlayButtonClick()
+        {
+            _view.PlayClip(_model.AudioButton);
+        }
+        public void PlayCellClick()
+        {
+            _view.PlayClip(_model.AudioClickCell);
+        }
+        public void PlayNextGen()
+        {
+            _view.PlayClip(_model.AudioNextGen);
+        }
+        #endregion
     }
 }

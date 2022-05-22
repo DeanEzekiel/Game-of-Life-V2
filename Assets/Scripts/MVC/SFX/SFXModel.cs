@@ -10,5 +10,11 @@ namespace GameOfLife.MVC_SFX
         [SerializeField]
         private MVC_Controllers.SFXController _controller;
         #endregion
+
+        #region SFXs
+        public AudioClip AudioNextGen;
+        public AudioClip AudioButton;
+        public AudioClip AudioClickCell;
+        #endregion
     }
 }

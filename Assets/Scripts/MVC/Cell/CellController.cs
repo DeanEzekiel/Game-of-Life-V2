@@ -66,6 +66,11 @@ namespace GameOfLife.MVC_Controllers
         {
             _model.CellList.StartCellsNewLife();
         }
+
+        public void TriggerCellClickSFX()
+        {
+            Controller.SFX.PlayCellClick();
+        }
         #endregion
     }
 }

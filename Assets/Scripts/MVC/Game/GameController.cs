@@ -64,6 +64,7 @@ namespace GameOfLife.MVC_Controllers
         public void TriggerUIGenText(int gen, int cells)
         {
             Controller.UI.SetGenerationText(gen.ToString(), cells.ToString());
+            TriggerNextGenSFX();
         }
 
         public void Quit()
@@ -107,6 +108,13 @@ namespace GameOfLife.MVC_Controllers
         {
             _model.StopGeneration();
             Controller.UI.ShowStateEnded();
+        }
+        #endregion
+
+        #region Sound Implementation
+        private void TriggerNextGenSFX()
+        {
+            Controller.SFX.PlayNextGen();
         }
         #endregion
     }
