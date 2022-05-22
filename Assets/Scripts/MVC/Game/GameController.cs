@@ -26,6 +26,10 @@ namespace GameOfLife.MVC_Controllers
         #endregion
 
         #region Public API
+        public void SetSpeed(float speed)
+        {
+            _model.SetSpeed(speed);
+        }
         public void SetState(GameState state)
         {
             State = state;
@@ -55,6 +59,11 @@ namespace GameOfLife.MVC_Controllers
         public void TriggerStartCellsNewLife()
         {
             Controllers.Cell.StartCellsNewLife();
+        }
+
+        public void TriggerUIGenText(int gen, int cells)
+        {
+            Controllers.UI.SetGenerationText(gen.ToString(), cells.ToString());
         }
 
         public void Quit()
@@ -97,6 +106,7 @@ namespace GameOfLife.MVC_Controllers
         private void StopGeneration()
         {
             _model.StopGeneration();
+            Controllers.UI.ShowStateEnded();
         }
         #endregion
     }

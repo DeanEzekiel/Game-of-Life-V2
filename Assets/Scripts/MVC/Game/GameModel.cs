@@ -22,7 +22,7 @@ namespace GameOfLife.MVC_Game
 
         private float WaitTime => (_tick / _speed);
 
-        public int GenerationNumber { get; private set; } = 0;
+        public int GenNumber { get; private set; } = 0;
         public int ActiveCellsCount { get; private set; } = 0;
         #endregion
 
@@ -35,14 +35,16 @@ namespace GameOfLife.MVC_Game
 
         public IEnumerator C_LoopGeneration()
         {
-            GenerationNumber = 0;
+            GenNumber = 0;
             do
             {
-                GenerationNumber++;
-                Debug.Log($"Now on Gen #{GenerationNumber}");
+                GenNumber++;
+                Debug.Log($"Now on Gen #{GenNumber}");
 
                 ActiveCellsCount = _controller.CheckLivingCellsCount();
                 Debug.Log($"Alive Cells Count: {ActiveCellsCount}");
+
+                _controller.TriggerUIGenText(GenNumber, ActiveCellsCount);
 
                 _controller.TriggerSetCellsNextLife();
                 yield return new WaitForSeconds(WaitTime);

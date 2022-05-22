@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -20,7 +21,7 @@ namespace GameOfLife.MVC_Grid
         [Range(2, 16)]
         private int _gridCols = 10;
         [SerializeField]
-        [Range(0.3f, 1f)]
+        [Range(0.3f, 1.2f)]
         private float _size = 1;
         #endregion
 
@@ -65,10 +66,10 @@ namespace GameOfLife.MVC_Grid
             Debug.Log($"Col Min {minCol} and Col Max {maxCol}");
 
             float tempRow = minRow;
-            while (tempRow <= maxRow)
+            while ((float)Math.Round(tempRow,2) <= maxRow)
             {
                 float tempCol = minCol;
-                while (tempCol <= maxCol)
+                while ((float)Math.Round(tempCol, 2) <= maxCol)
                 {
                     Vector2 position = new Vector2(tempRow, tempCol);
                     // spawn cell on position based on row and col

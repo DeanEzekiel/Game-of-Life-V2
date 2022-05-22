@@ -32,16 +32,12 @@ namespace GameOfLife.MVC_Cell
         #endregion
 
         #region Public API
-        public void Initialize()
+        public void Initialize(MVC_Controllers.CellController controller)
         {
+            _controller = controller;
             _spriteRenderer = GetComponent<SpriteRenderer>();
             // initially set it to dead
             SetCellDead();
-        }
-
-        public void SetController(MVC_Controllers.CellController controller)
-        {
-            _controller = controller;
         }
 
         public Vector2 GetLocation()

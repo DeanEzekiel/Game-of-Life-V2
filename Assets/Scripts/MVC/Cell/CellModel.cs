@@ -64,19 +64,11 @@ namespace GameOfLife.MVC_Cell
             cell.transform.position = position;
             cell.transform.localScale = _cellSize;
 
-            cell.SetController(_controller);
-            cell.Initialize();
+            cell.Initialize(_controller);
 
             CellList.AddCellForLookup(cell);
         }
 
-        #endregion
-
-        #region Implementation
-        private int GetLivingNeighborsCount(CellView cell)
-        {
-            return CellList.GetLivingNeighborsCount(cell);
-        }
         #endregion
     }
 }
