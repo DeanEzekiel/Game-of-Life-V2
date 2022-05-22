@@ -55,6 +55,11 @@ namespace GameOfLife.MVC_Game
             }
         }
 
+        public void StartGeneration()
+        {
+            StartCoroutine(C_LoopGeneration());
+        }
+
         public void StopGeneration()
         {
             StopAllCoroutines();

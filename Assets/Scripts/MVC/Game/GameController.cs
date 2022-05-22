@@ -85,7 +85,7 @@ namespace GameOfLife.MVC_Controllers
         [ContextMenu("Play Generation")]
         private void StartGeneration()
         {
-            StartCoroutine(_model.C_LoopGeneration());
+            _model.StartGeneration();
         }
 
         [ContextMenu("Stop Generation")]
