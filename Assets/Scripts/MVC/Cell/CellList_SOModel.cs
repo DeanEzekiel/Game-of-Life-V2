@@ -2,9 +2,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using GameOfLife.MVC_CellView;
 using UnityEngine;
 
-namespace GameOfLife.MVC_Cell
+namespace GameOfLife.MVC_CellModelView
 {
     [CreateAssetMenu(fileName = "Cell List Model",
         menuName = "ScriptableObjects/New Cell List Model")]

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
-using GameOfLife.MVC_Game;
+using GameOfLife.MVC_GameModel;
+using GameOfLife.MVC_GameView;
 using UnityEngine;
 
 namespace GameOfLife.MVC_Controllers

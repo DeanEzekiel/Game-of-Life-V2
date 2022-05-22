@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace GameOfLife.MVC_Game
+namespace GameOfLife.MVC_GameView
 {
     public class GameView : MonoBehaviour
     {

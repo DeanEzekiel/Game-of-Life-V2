@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
-using GameOfLife.MVC_SFX;
+using GameOfLife.MVC_SFXModel;
+using GameOfLife.MVC_SFXView;
 using UnityEngine;
 
 namespace GameOfLife.MVC_Controllers

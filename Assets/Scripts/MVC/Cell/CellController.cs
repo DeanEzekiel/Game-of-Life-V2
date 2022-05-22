@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using GameOfLife.MVC_Cell;
+using GameOfLife.MVC_CellModel;
 using UnityEngine;
 
 namespace GameOfLife.MVC_Controllers

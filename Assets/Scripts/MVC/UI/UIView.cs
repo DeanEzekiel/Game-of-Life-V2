@@ -5,7 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace GameOfLife.MVC_UI
+namespace GameOfLife.MVC_UIView
 {
     public class UIView : MonoBehaviour
     {

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
-using GameOfLife.MVC_Grid;
+using GameOfLife.MVC_GridModel;
+using GameOfLife.MVC_GridView;
 using UnityEngine;
 
 namespace GameOfLife.MVC_Controllers

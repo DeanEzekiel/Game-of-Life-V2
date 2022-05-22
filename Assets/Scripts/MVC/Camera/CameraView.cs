@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace GameOfLife.MVC_Camera
+namespace GameOfLife.MVC_CameraView
 {
     public class CameraView : MonoBehaviour
     {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace GameOfLife.MVC_Cell
+namespace GameOfLife.MVC_CellView
 {
     [RequireComponent(typeof(SpriteRenderer))]
     public class CellView : MonoBehaviour, IPointerClickHandler

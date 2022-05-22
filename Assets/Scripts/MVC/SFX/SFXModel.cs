@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace GameOfLife.MVC_SFX
+namespace GameOfLife.MVC_SFXModel
 {
     public class SFXModel : MonoBehaviour
     {

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
-using GameOfLife.MVC_Camera;
+using GameOfLife.MVC_CameraModel;
+using GameOfLife.MVC_CameraView;
 using UnityEngine;
 
 namespace GameOfLife.MVC_Controllers

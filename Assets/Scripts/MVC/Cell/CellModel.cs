@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using GameOfLife.MVC_CellModelView;
+using GameOfLife.MVC_CellView;
 using UnityEngine;
 
-namespace GameOfLife.MVC_Cell
+namespace GameOfLife.MVC_CellModel
 {
     public class CellModel : MonoBehaviour
     {
