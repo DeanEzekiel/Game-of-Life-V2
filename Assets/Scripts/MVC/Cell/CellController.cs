@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace GameOfLife.MVC_Controllers
 {
-    public class CellController : Controller
+    public class CellController : ControllerHelper
     {
         #region MVC
         [SerializeField]
@@ -22,7 +22,7 @@ namespace GameOfLife.MVC_Controllers
         [ContextMenu("Plot Init Cells")]
         public void PlotCells()
         {
-            Controllers.Game.SetState(GameState.PlotInitCells);
+            Controller.Game.SetState(GameState.PlotInitCells);
         }
 
         public void SetCellSpecs(float cellSize)
@@ -54,7 +54,7 @@ namespace GameOfLife.MVC_Controllers
 
         public GameState CheckGameState()
         {
-            return Controllers.Game.State;
+            return Controller.Game.State;
         }
 
         public void SetCellsNextLife()

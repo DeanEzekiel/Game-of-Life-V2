@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace GameOfLife.MVC_Controllers
 {
-    public class SFXController : Controller
+    public class SFXController : ControllerHelper
     {
         #region MVC
         [SerializeField]

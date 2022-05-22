@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace GameOfLife.MVC_Controllers
 {
-    public class GameController : Controller
+    public class GameController : ControllerHelper
     {
         #region MVC
         [SerializeField]
@@ -48,22 +48,22 @@ namespace GameOfLife.MVC_Controllers
 
         public int CheckLivingCellsCount()
         {
-            return Controllers.Cell.GetLivingCellsCount();
+            return Controller.Cell.GetLivingCellsCount();
         }
 
         public void TriggerSetCellsNextLife()
         {
-            Controllers.Cell.SetCellsNextLife();
+            Controller.Cell.SetCellsNextLife();
         }
 
         public void TriggerStartCellsNewLife()
         {
-            Controllers.Cell.StartCellsNewLife();
+            Controller.Cell.StartCellsNewLife();
         }
 
         public void TriggerUIGenText(int gen, int cells)
         {
-            Controllers.UI.SetGenerationText(gen.ToString(), cells.ToString());
+            Controller.UI.SetGenerationText(gen.ToString(), cells.ToString());
         }
 
         public void Quit()
@@ -106,7 +106,7 @@ namespace GameOfLife.MVC_Controllers
         private void StopGeneration()
         {
             _model.StopGeneration();
-            Controllers.UI.ShowStateEnded();
+            Controller.UI.ShowStateEnded();
         }
         #endregion
     }

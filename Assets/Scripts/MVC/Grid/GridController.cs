@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace GameOfLife.MVC_Controllers
 {
-    public class GridController : Controller
+    public class GridController : ControllerHelper
     {
         #region MVC
         [SerializeField]
@@ -18,17 +18,17 @@ namespace GameOfLife.MVC_Controllers
         [ContextMenu("Setup Grid")]
         public void MenuSetupGrid()
         {
-            Controllers.Game.SetState(GameState.GridSetup);
+            Controller.Game.SetState(GameState.GridSetup);
             SetupGrid(_model.GridRows, _model.GridCols, _model.Size);
         }
 
         public void SetupGrid(int rows, int cols, float size)
         {
-            if (Controllers.Game.State == GameState.GridSetup)
+            if (Controller.Game.State == GameState.GridSetup)
             {
                 // refresh the Cell Controller's cells list first
-                Controllers.Cell.ClearCellList();
-                Controllers.Cell.SetCellSpecs(size);
+                Controller.Cell.ClearCellList();
+                Controller.Cell.SetCellSpecs(size);
 
                 _model.SetupGrid(rows, cols, size);
             }
@@ -36,7 +36,7 @@ namespace GameOfLife.MVC_Controllers
 
         public void TriggerSpawnCell(Vector2 position)
         {
-            Controllers.Cell.SpawnCellOnPos(position);
+            Controller.Cell.SpawnCellOnPos(position);
         }
         #endregion
     }
