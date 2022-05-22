@@ -14,12 +14,13 @@ namespace GameOfLife.MVC_Grid
         #region Fields
         //TODO remove SerializeField when UI is done
         [SerializeField]
-        [Range(5, 25)]
+        [Range(2, 16)]
         private int _gridRows = 10;
         [SerializeField]
-        [Range(5, 25)]
+        [Range(2, 16)]
         private int _gridCols = 10;
         [SerializeField]
+        [Range(0.3f, 1f)]
         private float _size = 1;
         #endregion
 
